@@ -1,0 +1,52 @@
+name: github pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  deploy:
+    runs-on: macos-10.15
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/cache@v2
+        id: dependency-cache
+        with:
+          path: |
+            ~/.cargo/bin/mdbook*
+            /usr/local/bin/dot
+          key: ${{ runner.os }}-dependency-cache-${{ secrets.CACHE_VERSION }}
+
+      - name: Install graphviz dependency
+        if: steps.dependency-cache.outputs.cache-hit != 'true'
+        run: brew install graphviz
+
+      - name: Read .env
+        id: rust-dependencies-version
+        run: |
+          . ./.env
+          echo "::set-output name=MDBOOK_VERSION::${MDBOOK_VERSION}"
+          echo "::set-output name=MDBOOK_GRAPHVIZ_VERSION::${MDBOOK_GRAPHVIZ_VERSION}"
+
+      - uses: actions-rs/install@v0.1
+        if: steps.dependency-cache.outputs.cache-hit != 'true'
+        with:
+          crate: mdbook
+          version: '${{ steps.rust-dependencies-version.MDBOOK_VERSION }}'
+
+      - uses: actions-rs/install@v0.1
+        if: steps.dependency-cache.outputs.cache-hit != 'true'
+        with:
+          crate: mdbook-graphviz
+          version: '${{ steps.rust-dependencies-version.MDBOOK_GRAPHVIZ_VERSION }}'
+
+      - name: Build mdbook
+        run: mdbook build
+
+      - name: Deploy mdbook
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./book
