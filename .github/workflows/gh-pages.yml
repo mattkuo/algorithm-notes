@@ -19,10 +19,6 @@ jobs:
             /usr/local/bin/dot
           key: ${{ runner.os }}-dependency-cache-${{ secrets.CACHE_VERSION }}
 
-      - name: Install graphviz dependency
-        if: steps.dependency-cache.outputs.cache-hit != 'true'
-        run: brew install graphviz
-
       - name: Read .env
         id: rust-dependencies-version
         run: |
@@ -34,13 +30,17 @@ jobs:
         if: steps.dependency-cache.outputs.cache-hit != 'true'
         with:
           crate: mdbook
-          version: '${{ steps.rust-dependencies-version.MDBOOK_VERSION }}'
+          version: ${{ steps.rust-dependencies-version.MDBOOK_VERSION }}
 
       - uses: actions-rs/install@v0.1
         if: steps.dependency-cache.outputs.cache-hit != 'true'
         with:
           crate: mdbook-graphviz
-          version: '${{ steps.rust-dependencies-version.MDBOOK_GRAPHVIZ_VERSION }}'
+          version: ${{ steps.rust-dependencies-version.MDBOOK_GRAPHVIZ_VERSION }}
+
+      - name: Install graphviz dependency
+        if: steps.dependency-cache.outputs.cache-hit != 'true'
+        run: brew install graphviz
 
       - name: Build mdbook
         run: mdbook build
