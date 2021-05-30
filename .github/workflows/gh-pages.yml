@@ -30,13 +30,13 @@ jobs:
         if: steps.dependency-cache.outputs.cache-hit != 'true'
         with:
           crate: mdbook
-          version: ${{ steps.rust-dependencies-version.MDBOOK_VERSION }}
+          version: ${{ steps.rust-dependencies-version.outputs.MDBOOK_VERSION }}
 
       - uses: actions-rs/install@v0.1
         if: steps.dependency-cache.outputs.cache-hit != 'true'
         with:
           crate: mdbook-graphviz
-          version: ${{ steps.rust-dependencies-version.MDBOOK_GRAPHVIZ_VERSION }}
+          version: ${{ steps.rust-dependencies-version.outputs.MDBOOK_GRAPHVIZ_VERSION }}
 
       - name: Install graphviz dependency
         if: steps.dependency-cache.outputs.cache-hit != 'true'
