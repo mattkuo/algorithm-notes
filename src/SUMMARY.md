@@ -1,3 +1,0 @@
-# Summary
-
-- [Graphs](./graphs.md)

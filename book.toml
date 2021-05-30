@@ -1,9 +1,0 @@
-[book]
-authors = ["Matthew Kuo"]
-language = "en"
-multilingual = false
-src = "src"
-title = "Interview Notes"
-
-[preprocessor.graphviz]
-command = "mdbook-graphviz"
