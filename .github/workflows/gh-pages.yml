@@ -15,7 +15,8 @@ jobs:
         id: dependency-cache
         with:
           path: |
-            ~/.cargo/bin/mdbook*
+            ~/.cargo/bin/mdbook
+            ~/.cargo/bin/mdbook-graphviz
             /usr/local/bin/dot
           key: ${{ runner.os }}-dependency-cache-${{ secrets.CACHE_VERSION }}
 
