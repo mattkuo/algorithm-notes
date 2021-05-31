@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="graphs.html"><strong aria-hidden="true">1.</strong> Graphs</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="graphs/index.html"><strong aria-hidden="true">1.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graphs/topological-sort.html"><strong aria-hidden="true">1.1.</strong> Topological Sort</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -168,25 +168,37 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="graphs"><a class="header" href="#graphs">Graphs</a></h1>
-<h2 id="topological-sort"><a class="header" href="#topological-sort">Topological Sort</a></h2>
-<p>Topological sort is useful for resolving dependency chains or figuring out if a graph is a directed acylic graph.</p>
-<pre><code class="language-dot">digraph finite_state_machine {
-    rankdir=LR;
-    size=&quot;8,5&quot;
-
-    node [shape = doublecircle]; S;
-    node [shape = point ]; qi
-
-    node [shape = circle];
-    qi -&gt; S;
-    S  -&gt; q1 [ label = &quot;a&quot; ];
-    S  -&gt; S  [ label = &quot;a&quot; ];
-    q1 -&gt; S  [ label = &quot;a&quot; ];
-    q1 -&gt; q2 [ label = &quot;ddb&quot; ];
-    q2 -&gt; q1 [ label = &quot;b&quot; ];
-    q2 -&gt; q2 [ label = &quot;b&quot; ];
-}
-</code></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="topological-sort"><a class="header" href="#topological-sort">Topological Sort</a></h1>
+<p>Topological sort is commonly used for resolving dependency graphs or job scheduling. The algorithm only works if the graph is <strong>acyclic</strong>. However, it can be applied to find find out whether a graph is acyclic or cyclic.</p>
+<p>For example, given the graph below, the topological order for the graph is <code>ABCD</code> or <code>ACBD</code>.</p>
+<p><img src="graphs/topological_sort_0.generated.svg" alt="" /></p>
+<p>The graph below is non-resolvable by topological sort because D has a dependency on A. <a href="graphs/topological-sort.html#breadth-first-search-approach-kahns-algorithm">Kahn's algorithm</a> would return an incomplete ordering of nodes (i.e. <code>AB</code>).</p>
+<p><img src="graphs/topological_sort_1.generated.svg" alt="" /></p>
+<h2 id="breadth-first-search-approach-kahns-algorithm"><a class="header" href="#breadth-first-search-approach-kahns-algorithm">Breadth First Search Approach (Kahn's Algorithm)</a></h2>
+<p>The intuition here is to start at the top of the dependency tree and removing each node. Once the <a href="https://xlinux.nist.gov/dads/HTML/indegree.html">in-degree</a> of a node reaches zero, remove it and add it to the sort order.</p>
+<ol>
+<li>Compute the in-degree of each node</li>
+<li>Add all nodes with zero dependents into a queue</li>
+<li>As each node is removed from the queue, append the node to the result list and for each of its children (dependencies):
+<ol>
+<li>Decrement its ingress count</li>
+<li>Add it to the queue if ingress count reaches 0</li>
+</ol>
+</li>
+<li>When the queue is empty, if the number of nodes in the resulting list is less than the number of nodes, the ordering cannot be resolved (the graph is cyclic).</li>
+</ol>
+<p>If the graph is <strong>cyclic</strong> the algorithm will report an incomplete ordering. It will reach a point where there is at least two nodes that have an in-degree greater than zero. This property is useful for detecting cycles within a graph.</p>
+<h2 id="depth-first-search-approach"><a class="header" href="#depth-first-search-approach">Depth First Search Approach</a></h2>
+<p>Intuition: Recursively traverse the graph and mark each node as visited. If a node is already visited, skip it. When a leaf is discovered, add nodes to a stack during backtracking. Unlike the BFS approach, the topological ordering is in reverse order because we traverse the bottom of the dependency graph and add it to the ordering.</p>
+<ol>
+<li>For each node, recursively traverse the graph</li>
+<li>Mark each node as visited</li>
+<li>During backtracking, add the node onto a stack</li>
+<li>Pop each node of the stack for the topological order</li>
+</ol>
+<p>The shortcoming of this approach is that it doesn't detect cycles in the graph (although you can use DFS with a few modifications to do so).</p>
+<h2 id="problems"><a class="header" href="#problems">Problems</a></h2>
+<p><a href="https://leetcode.com/problems/course-schedule">Course Scheduling</a></p>
 
                     </main>
 
