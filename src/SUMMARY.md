@@ -1,4 +1,5 @@
 # Summary
 
-- [Graphs](./graphs/index.md)
-  - [Topological Sort](./graphs/topological-sort.md)
+- [Graphs](graphs/index.md)
+  - [Graph Traversal](graphs/dfs-bfs.md)
+  - [Topological Sort](graphs/topological-sort.md)
