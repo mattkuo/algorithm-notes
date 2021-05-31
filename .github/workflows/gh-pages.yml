@@ -38,9 +38,8 @@ jobs:
           crate: mdbook-graphviz
           version: ${{ steps.rust-dependencies-version.outputs.MDBOOK_GRAPHVIZ_VERSION }}
 
-      - name: Install graphviz dependency
-        if: steps.dependency-cache.outputs.cache-hit != 'true'
-        run: brew install graphviz
+      - name: Setup Graphviz
+        uses: ts-graphviz/setup-graphviz@v1
 
       - name: Build mdbook
         run: mdbook build
