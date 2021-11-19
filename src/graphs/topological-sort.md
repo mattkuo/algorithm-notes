@@ -54,4 +54,5 @@ The shortcoming of this approach is that it doesn't detect cycles in the graph (
 
 ## Problems
 
-[Course Scheduling](https://leetcode.com/problems/course-schedule)
+- [Course Scheduling](https://leetcode.com/problems/course-schedule)
+- [Alien Dictionary](https://leetcode.com/problems/alien-dictionary)
