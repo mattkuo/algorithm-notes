@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/graphs/index.html"><strong aria-hidden="true">2.2.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/graphs/traversal.html"><strong aria-hidden="true">2.2.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.2.2.</strong> Topological Sort</a></li></ol></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -178,6 +178,29 @@
 <li>pow()</li>
 <li>sqrt()</li>
 </ul>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="collections-library"><a class="header" href="#collections-library">Collections Library</a></h1>
+<h2 id="comparator"><a class="header" href="#comparator">Comparator</a></h2>
+<p>Constructors for various data structures that apply sortation to the data allow you to pass in a comparator to compare elements as they are inserted. In addition the <code>Collections.sort()</code> method allows you to apply sortation to any data structure that implements the <code>List</code> interface. Being comfortable with the <code>Comparator</code> syntax is undoubtedly necessary.</p>
+<p>The <code>Comparator</code> has one abstract method <code>compare()</code>.</p>
+<pre><code class="language-java">int compare(T obj1, T obj2);
+</code></pre>
+<ul>
+<li>Returns -ive integer if first argument &lt; second argument (or first argument comes before second argument in a natural ordering)</li>
+<li>Returns 0 if first argument == second argument </li>
+<li>Returns +ive if first argument &gt; second argument (or first argument comes after second argument in a natural ordering)</li>
+</ul>
+<p>Longhand syntax.</p>
+<pre><code class="language-java">public class MyObjectComparator implements Comparator&lt;MyObject&gt; {
+    @Override
+    public int compare(MyObject obj1, MyObject obj2) {
+        return Integer.compare(obj1.getValue(), obj2.getValue());
+    }
+}
+</code></pre>
+<p>Functional syntax.</p>
+<pre><code class="language-java">Comparator myComparator = (a, b) -&gt; Integer.compare(a.getValue(), b.getValue());
+</code></pre>
+<p>Note: It's a good idea to use <code>Integer.compare()</code> here to prevent overflow.</p>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="data-structures"><a class="header" href="#data-structures">Data Structures</a></h1>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="primitive-types"><a class="header" href="#primitive-types">Primitive Types</a></h1>
 <h2 id="sizes-of-types"><a class="header" href="#sizes-of-types">Sizes of Types</a></h2>
@@ -238,6 +261,9 @@
 </ul>
 </li>
 </ul>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="binary-search-trees"><a class="header" href="#binary-search-trees">Binary Search Trees</a></h1>
+<h2 id="java-libraries"><a class="header" href="#java-libraries">Java Libraries</a></h2>
+<p>Java has TreeSet and TreeMap which are libraries that are based on the BST. These store the elements in ascending order.</p>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="graphs"><a class="header" href="#graphs">Graphs</a></h1>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="graph-traversal"><a class="header" href="#graph-traversal">Graph Traversal</a></h1>
 <p>Graphs are typically traversed using depth first search or breadth first search. Both these family of algorithms have certain properties that make them more suitable for some problems over the other. In cases where traversal of a whole graph is required, either approach will find the correct solution.</p>
