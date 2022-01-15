@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="graphs/index.html"><strong aria-hidden="true">1.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="graphs/traversal.html"><strong aria-hidden="true">1.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="graphs/topological-sort.html"><strong aria-hidden="true">1.2.</strong> Topological Sort</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/graphs/index.html"><strong aria-hidden="true">2.2.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/graphs/traversal.html"><strong aria-hidden="true">2.2.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.2.2.</strong> Topological Sort</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -167,7 +167,78 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="graphs"><a class="header" href="#graphs">Graphs</a></h1>
+                        <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="utility-classesfunctions"><a class="header" href="#utility-classesfunctions">Utility Classes/Functions</a></h1>
+<p>Common <code>Math</code> functions</p>
+<ul>
+<li>abs()</li>
+<li>ceil()</li>
+<li>floor()</li>
+<li>min()</li>
+<li>max()</li>
+<li>pow()</li>
+<li>sqrt()</li>
+</ul>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="data-structures"><a class="header" href="#data-structures">Data Structures</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="primitive-types"><a class="header" href="#primitive-types">Primitive Types</a></h1>
+<h2 id="sizes-of-types"><a class="header" href="#sizes-of-types">Sizes of Types</a></h2>
+<p>In Java, sizes of data types are machine independent. A word in the JVM is 32-bits.</p>
+<table><thead><tr><th>Data Type</th><th>Bytes</th><th>Bits</th></tr></thead><tbody>
+<tr><td>boolean</td><td>-</td><td>1</td></tr>
+<tr><td>byte</td><td>1</td><td>8</td></tr>
+<tr><td>short</td><td>2</td><td>16</td></tr>
+<tr><td>char</td><td>2</td><td>16</td></tr>
+<tr><td>int</td><td>4</td><td>32</td></tr>
+<tr><td>float (decimal)</td><td>4</td><td>32</td></tr>
+<tr><td>long</td><td>8</td><td>64</td></tr>
+<tr><td>double (decimal)</td><td>8</td><td>64</td></tr>
+</tbody></table>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="bit-manipulation"><a class="header" href="#bit-manipulation">Bit Manipulation</a></h1>
+<p>A common problem is computing the number of bits set to 1 in an integer. There are two solutions:</p>
+<ol>
+<li>Loop starting at the least significant digit of the integer and bitwise-AND the integer with 1. Increment count and shift right by one bit on each iteration. The runtime complexity is <em>O(n)</em> with <em>n</em> being the number of bits in the integer.</li>
+</ol>
+<pre><code class="language-java">public int countOnes(int integer) {
+    int count = 0;
+    while (integer &gt; 0) {
+        if ((integer &amp; 1) == 1) {
+            count++;
+        }
+
+        integer = integer &gt;&gt;&gt; 1;
+    }
+    return count;
+}
+</code></pre>
+<ol start="2">
+<li>A less intuitive approach is to use a couple of bit manipulation tricks to isolate out the least significant bit set to 1 of the input integer and XOR this with the input (to remove this bit). Continue doing this while integer isn't 0. The runtime complexity is <em>O(s)</em> where <em>s</em> is the number of 1's in the integer. This trick works even for negative numbers.</li>
+</ol>
+<p><em>Note: <code>x &amp; (x - 1)</code> also seem to replace lowest bit that is 1 with 0</em></p>
+<pre><code class="language-java">public static int countOnes2(int integer) {
+    int count = 0;
+    while (integer &gt; 0) {
+        // Isolate out the rightmost set bit
+        int rightMostOne = integer &amp; ~(integer - 1);
+        // Remove the bit from the original input
+        integer = integer ^ rightMostOne;
+        count++;
+    }
+    return count;
+}
+</code></pre>
+<p>Summary</p>
+<ul>
+<li>Clear the lowest set bit: <code>x &amp; (x - 1)</code>
+<ul>
+<li>Intuition: Substracting one from <code>x</code> will turn the lowest bit into a 0</li>
+</ul>
+</li>
+<li>Isolate lowest 1-bit: <code>x &amp; ~(x - 1)</code>
+<ul>
+<li>Intuition: Following from above, the NOT operator will turn the 0 into a 1 and so the AND operator will end up selecting the lowest 1-bit</li>
+</ul>
+</li>
+</ul>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="graphs"><a class="header" href="#graphs">Graphs</a></h1>
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="graph-traversal"><a class="header" href="#graph-traversal">Graph Traversal</a></h1>
 <p>Graphs are typically traversed using depth first search or breadth first search. Both these family of algorithms have certain properties that make them more suitable for some problems over the other. In cases where traversal of a whole graph is required, either approach will find the correct solution.</p>
 <h2 id="depth-first-search"><a class="header" href="#depth-first-search">Depth First Search</a></h2>
@@ -219,9 +290,9 @@
 <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="topological-sort"><a class="header" href="#topological-sort">Topological Sort</a></h1>
 <p>Topological sort is commonly used for resolving dependency graphs or job scheduling. The algorithm only works if the graph is <strong>acyclic</strong>. However, it can be applied to find find out whether a graph is acyclic or cyclic.</p>
 <p>For example, given the graph below, the topological order for the graph is <code>ABCD</code> or <code>ACBD</code>.</p>
-<p><img src="graphs/topological_sort_0.generated.svg" alt="" /></p>
-<p>The graph below is non-resolvable by topological sort because D has a dependency on A. <a href="graphs/topological-sort.html#breadth-first-search-approach-kahns-algorithm">Kahn's algorithm</a> would return an incomplete ordering of nodes (i.e. <code>AB</code>).</p>
-<p><img src="graphs/topological_sort_1.generated.svg" alt="" /></p>
+<p><img src="data-structures/graphs/topological_sort_0.generated.svg" alt="" /></p>
+<p>The graph below is non-resolvable by topological sort because D has a dependency on A. <a href="data-structures/graphs/topological-sort.html#breadth-first-search-approach-kahns-algorithm">Kahn's algorithm</a> would return an incomplete ordering of nodes (i.e. <code>AB</code>).</p>
+<p><img src="data-structures/graphs/topological_sort_1.generated.svg" alt="" /></p>
 <h2 id="breadth-first-search-approach-kahns-algorithm"><a class="header" href="#breadth-first-search-approach-kahns-algorithm">Breadth First Search Approach (Kahn's Algorithm)</a></h2>
 <p>The intuition here is to start at the top of the dependency tree and removing each node. Once the <a href="https://xlinux.nist.gov/dads/HTML/indegree.html">in-degree</a> of a node reaches zero, remove it and add it to the sort order.</p>
 <ol>
