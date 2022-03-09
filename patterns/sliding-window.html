@@ -3,10 +3,8 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title></title>
+        <title>Sliding Window - Interview Notes</title>
         
-        
-        <base href="/">
         
 
 
@@ -20,28 +18,28 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="css/variables.css">
-        <link rel="stylesheet" href="css/general.css">
-        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
         
-        <link rel="stylesheet" href="css/print.css" media="print">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="highlight.css">
-        <link rel="stylesheet" href="tomorrow-night.css">
-        <link rel="stylesheet" href="ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -51,7 +49,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -97,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="patterns/sliding-window.html"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="../java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/sliding-window.html" class="active"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -133,7 +131,7 @@
 
                     <div class="right-buttons">
                         
-                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -167,13 +165,38 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="document-not-found-404"><a class="header" href="#document-not-found-404">Document not found (404)</a></h1>
-<p>This URL is invalid, sorry. Please use the navigation bar or search to continue.</p>
+                        <h1 id="sliding-window"><a class="header" href="#sliding-window">Sliding Window</a></h1>
+<p>The sliding window pattern is the description given to a family of greedy algorithms that can be applied to optimally find the min/max property of a continguous slice of an array. The name comes from the fact that the algorithm keeps track of two indices into the input array, <code>tail</code> and <code>head</code>, that respectively form the start end end of a &quot;window&quot;. The algorithm commonly makes use of a loop invariant to decide whether to shrink or expand the size of the window to arrive at a local optima.</p>
+<p>This set of algorithms allow a problem to be solved in one pass with a time complexity of O(n).</p>
+<h2 id="fixed-size-window"><a class="header" href="#fixed-size-window">Fixed-size Window</a></h2>
+<ul>
+<li>The size of the window is perserved. When moving the window, both <code>head</code> and <code>tail</code> are incremented simultaneously.</li>
+</ul>
+<h2 id="elastic-window"><a class="header" href="#elastic-window">Elastic Window</a></h2>
+<ul>
+<li>Loop through array by incrementing <code>head</code> while perserving loop invariant</li>
+<li>When the loop invariant is violated, shrink the array by incrementing <code>tail</code> until loop invariant no longer violated</li>
+</ul>
+<p>Example Problems:</p>
+<ul>
+<li><a href="https://leetcode.com/problems/fruit-into-baskets">Fruits into Baskets</a></li>
+</ul>
+<h2 id="snapping-window"><a class="header" href="#snapping-window">Snapping Window</a></h2>
+<p>When the loop invariant no longer holds, the window snaps closed (<code>tail</code> = <code>head</code> although we don't need to keep track of tail if we don't care about window size).</p>
+<p>Example Problems:</p>
+<ul>
+<li><a href="https://leetcode.com/problems/maximum-subarray">Maximum subarray</a></li>
+<li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters">Longest substring with no repeated characters</a></li>
+</ul>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
+                        
+                            <a rel="prev" href="../patterns/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
                         
 
                         
@@ -184,6 +207,10 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                
+                    <a rel="prev" href="../patterns/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
                 
 
                 
@@ -206,14 +233,14 @@
         
 
         
-        <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
