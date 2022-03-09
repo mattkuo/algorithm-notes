@@ -14,8 +14,6 @@ int compare(T obj1, T obj2);
 - Returns 0 if first argument == second argument 
 - Returns +ive if first argument > second argument (or first argument comes after second argument in a natural ordering)
 
-
-
 Longhand syntax.
 ```java
 public class MyObjectComparator implements Comparator<MyObject> {

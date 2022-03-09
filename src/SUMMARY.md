@@ -10,3 +10,5 @@
   - [Graphs](data-structures/graphs/index.md)
     - [Graph Traversal](data-structures/graphs/traversal.md)
     - [Topological Sort](data-structures/graphs/topological-sort.md)
+- [Patterns](patterns/index.md)
+  - [Sliding Window](patterns/sliding-window.md)
