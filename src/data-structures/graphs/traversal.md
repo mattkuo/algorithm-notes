@@ -53,10 +53,10 @@ public void bfs(Node root) {
     queue.add(root);
 
     while (!queue.isEmpty()) {
-        Node current = stack.remove();
+        Node current = queue.remove();
 
         for (Node child: current.getChildren()) {
-            stack.add(child);
+            queue.add(child);
         }
     }
 }

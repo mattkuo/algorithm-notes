@@ -12,3 +12,7 @@
     - [Topological Sort](data-structures/graphs/topological-sort.md)
 - [Patterns](patterns/index.md)
   - [Sliding Window](patterns/sliding-window.md)
+  - [Dynamic Programming (Knapsack)](patterns/dynamic-programming.md)
+  - [Two Pointers](patterns/two-pointers.md)
+  - [BFS](patterns/bfs.md)
+  - [DFS](patterns/dfs.md)
