@@ -97,7 +97,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="patterns/sliding-window.html"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="patterns/sliding-window.html"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li><li class="chapter-item expanded "><a href="patterns/dynamic-programming.html"><strong aria-hidden="true">3.2.</strong> Dynamic Programming (Knapsack)</a></li><li class="chapter-item expanded "><a href="patterns/two-pointers.html"><strong aria-hidden="true">3.3.</strong> Two Pointers</a></li><li class="chapter-item expanded "><a href="patterns/bfs.html"><strong aria-hidden="true">3.4.</strong> BFS</a></li><li class="chapter-item expanded "><a href="patterns/dfs.html"><strong aria-hidden="true">3.5.</strong> DFS</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -304,10 +304,10 @@
     queue.add(root);
 
     while (!queue.isEmpty()) {
-        Node current = stack.remove();
+        Node current = queue.remove();
 
         for (Node child: current.getChildren()) {
-            stack.add(child);
+            queue.add(child);
         }
     }
 }
@@ -371,6 +371,50 @@
 <li><a href="https://leetcode.com/problems/maximum-subarray">Maximum subarray</a></li>
 <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters">Longest substring with no repeated characters</a></li>
 </ul>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="dynamic-programming"><a class="header" href="#dynamic-programming">Dynamic Programming</a></h1>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h2 id="two-pointers"><a class="header" href="#two-pointers">Two Pointers</a></h2>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="breadth-first-search-1"><a class="header" href="#breadth-first-search-1">Breadth First Search</a></h1>
+<p>BFS can be implemented by using a queue to traverse nodes in order of nodes that are closest to start point. This naturally finds the shortest path solution from the root node.</p>
+<p>See <a href="patterns/../data-structures/graphs/traversal.html">BFS section</a> of graphs traversal for more information.</p>
+<h2 id="level-order-traversal"><a class="header" href="#level-order-traversal">Level Order Traversal</a></h2>
+<p>A trick to traverse the tree in order is to observe the size of the queue at the start of the while loop and only traverse this number of nodes in the current iteration. If done correctly, the next iteration will only visit the children of the current iteration.</p>
+<pre><code class="language-java">public void bfs(Node root) {
+    Queue&lt;Node&gt; queue = new LinkedList&lt;&gt;();
+    queue.add(root);
+
+    while (!queue.isEmpty()) {
+        int size = queue.size();
+        
+        for (int i = 0; i &lt; size; i++) {
+            Node current = queue.remove();
+
+            for (Node child: current.getChildren()) {
+                queue.add(child);
+            }
+        }
+    }
+}
+</code></pre>
+<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="depth-first-search-1"><a class="header" href="#depth-first-search-1">Depth First Search</a></h1>
+<p>The recursive process for DFS usually results in less code and is more elegant. DFS can also be done utilizing a stack. See the <a href="patterns/../data-structures/graphs/traversal.html">DFS</a> section on the discussion on graphs for more information. Note that the recursive traversal method is analogous to the iterative one. In iterative traversal, the stack data structure emulates the call stack of the recursive solution.</p>
+<h2 id="keeping-track-of-the-current-path"><a class="header" href="#keeping-track-of-the-current-path">Keeping Track of the Current Path</a></h2>
+<p>A common pattern is to be asked to find the path from root to leaf. This can be done by keeping track of the current path in a list and removing it during backtracking.</p>
+<pre><code class="language-java">public List&lt;Node&gt; dfs(Node root, List&lt;Node&gt; path) {
+    if (root == null) return;
+    path.add(root);
+
+    if (condition) {
+        return path;
+    }
+
+    for (Node child: root.getChildren()) {
+        dfs(child);
+    }
+
+    // We're done considering this node. Remove it as we're now backtracking.
+    path.remove(path.size() - 1);
+}
+</code></pre>
 
                     </main>
 

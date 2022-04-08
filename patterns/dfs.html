@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Graph Traversal - Interview Notes</title>
+        <title>DFS - Interview Notes</title>
         
         
 
@@ -18,28 +18,28 @@
         <meta name="theme-color" content="#ffffff" />
 
         
-        <link rel="icon" href="../../favicon.svg">
+        <link rel="icon" href="../favicon.svg">
         
         
-        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="shortcut icon" href="../favicon.png">
         
-        <link rel="stylesheet" href="../../css/variables.css">
-        <link rel="stylesheet" href="../../css/general.css">
-        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
         
-        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <link rel="stylesheet" href="../css/print.css" media="print">
         
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
         
-        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
         
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../../highlight.css">
-        <link rel="stylesheet" href="../../tomorrow-night.css">
-        <link rel="stylesheet" href="../../ayu-highlight.css">
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
         
@@ -49,7 +49,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
-            var path_to_root = "../../";
+            var path_to_root = "../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../../java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="../../java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="../../data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="../../data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="../../data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../data-structures/graphs/traversal.html" class="active"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="../../data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../../patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../patterns/sliding-window.html"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li><li class="chapter-item expanded "><a href="../../patterns/dynamic-programming.html"><strong aria-hidden="true">3.2.</strong> Dynamic Programming (Knapsack)</a></li><li class="chapter-item expanded "><a href="../../patterns/two-pointers.html"><strong aria-hidden="true">3.3.</strong> Two Pointers</a></li><li class="chapter-item expanded "><a href="../../patterns/bfs.html"><strong aria-hidden="true">3.4.</strong> BFS</a></li><li class="chapter-item expanded "><a href="../../patterns/dfs.html"><strong aria-hidden="true">3.5.</strong> DFS</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="../java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/sliding-window.html"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li><li class="chapter-item expanded "><a href="../patterns/dynamic-programming.html"><strong aria-hidden="true">3.2.</strong> Dynamic Programming (Knapsack)</a></li><li class="chapter-item expanded "><a href="../patterns/two-pointers.html"><strong aria-hidden="true">3.3.</strong> Two Pointers</a></li><li class="chapter-item expanded "><a href="../patterns/bfs.html"><strong aria-hidden="true">3.4.</strong> BFS</a></li><li class="chapter-item expanded "><a href="../patterns/dfs.html" class="active"><strong aria-hidden="true">3.5.</strong> DFS</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -131,7 +131,7 @@
 
                     <div class="right-buttons">
                         
-                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
                         
@@ -165,69 +165,37 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="graph-traversal"><a class="header" href="#graph-traversal">Graph Traversal</a></h1>
-<p>Graphs are typically traversed using depth first search or breadth first search. Both these family of algorithms have certain properties that make them more suitable for some problems over the other. In cases where traversal of a whole graph is required, either approach will find the correct solution.</p>
-<h2 id="depth-first-search"><a class="header" href="#depth-first-search">Depth First Search</a></h2>
-<p>Greedily traverses the depth of a graph/tree before exploring neighboring nodes. It's often implemented as a recursive algorithm. But, it can also be implemented iteratively using a stack.</p>
-<h3 id="recursion"><a class="header" href="#recursion">Recursion</a></h3>
-<p>Recursion tends to result in a solution that requires less lines of code.</p>
-<pre><code class="language-java">public void dfs(Node root) {
+                        <h1 id="depth-first-search"><a class="header" href="#depth-first-search">Depth First Search</a></h1>
+<p>The recursive process for DFS usually results in less code and is more elegant. DFS can also be done utilizing a stack. See the <a href="../data-structures/graphs/traversal.html">DFS</a> section on the discussion on graphs for more information. Note that the recursive traversal method is analogous to the iterative one. In iterative traversal, the stack data structure emulates the call stack of the recursive solution.</p>
+<h2 id="keeping-track-of-the-current-path"><a class="header" href="#keeping-track-of-the-current-path">Keeping Track of the Current Path</a></h2>
+<p>A common pattern is to be asked to find the path from root to leaf. This can be done by keeping track of the current path in a list and removing it during backtracking.</p>
+<pre><code class="language-java">public List&lt;Node&gt; dfs(Node root, List&lt;Node&gt; path) {
     if (root == null) return;
+    path.add(root);
+
+    if (condition) {
+        return path;
+    }
 
     for (Node child: root.getChildren()) {
         dfs(child);
     }
+
+    // We're done considering this node. Remove it as we're now backtracking.
+    path.remove(path.size() - 1);
 }
 </code></pre>
-<p>The shortcoming of using recursion for DFS is that it requires stack space. A graph with a large depth can quickly result in a stack overflow. This can be overcome by converting the solution to use <a href="https://stackoverflow.com/questions/310974/what-is-tail-call-optimization">tail-recursion</a>.</p>
-<h3 id="iteration"><a class="header" href="#iteration">Iteration</a></h3>
-<p>For languages that do not support tail-recursion optimization (e.g. Java, Python), we can use a Stack data structure to iteratively traverse the graph.</p>
-<pre><code class="language-java">public void iterativeDFS(Node root) {
-    Stack&lt;Node&gt; stack = new Stack&lt;&gt;();
-    stack.add(root);
-
-    while (!stack.isEmpty()) {
-        Node current = stack.pop();
-        // Perform backtracking tasks
-
-        for (Node child: current.getChildren()) {
-            // Traverse child
-            stack.push(child);
-        }
-    }
-}
-</code></pre>
-<h2 id="breadth-first-search"><a class="header" href="#breadth-first-search">Breadth First Search</a></h2>
-<p>This algorithm traverses its direct children first before any of its children's children. The consequence of this is that it is able to naturally solve shortest-path problems quite easily.</p>
-<pre><code class="language-java">public void bfs(Node root) {
-    Queue&lt;Node&gt; queue = new LinkedList&lt;&gt;();
-    queue.add(root);
-
-    while (!queue.isEmpty()) {
-        Node current = queue.remove();
-
-        for (Node child: current.getChildren()) {
-            queue.add(child);
-        }
-    }
-}
-</code></pre>
-<p>Notice that the algorithm for BFS is almost identical to iterative DFS. The only difference between that it utilizes a queue (FIFO) versus a stack (LIFO).</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../../data-structures/graphs/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../patterns/bfs.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../../data-structures/graphs/topological-sort.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -237,15 +205,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../../data-structures/graphs/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../patterns/bfs.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../../data-structures/graphs/topological-sort.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
@@ -266,14 +230,14 @@
         
 
         
-        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
         
 
-        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
-        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
         
