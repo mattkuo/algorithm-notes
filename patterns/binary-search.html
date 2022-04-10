@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Data Structures - Interview Notes</title>
+        <title>Binary Search - Interview Notes</title>
         
         
 
@@ -95,7 +95,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="../java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/index.html" class="active"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/sliding-window.html"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li><li class="chapter-item expanded "><a href="../patterns/two-pointers.html"><strong aria-hidden="true">3.2.</strong> Two Pointers</a></li><li class="chapter-item expanded "><a href="../patterns/bfs.html"><strong aria-hidden="true">3.3.</strong> BFS</a></li><li class="chapter-item expanded "><a href="../patterns/dfs.html"><strong aria-hidden="true">3.4.</strong> DFS</a></li><li class="chapter-item expanded "><a href="../patterns/linked-list-reversal.html"><strong aria-hidden="true">3.5.</strong> Linked-List Reversal</a></li><li class="chapter-item expanded "><a href="../patterns/dynamic-programming.html"><strong aria-hidden="true">3.6.</strong> Dynamic Programming (Knapsack)</a></li><li class="chapter-item expanded "><a href="../patterns/binary-search.html"><strong aria-hidden="true">3.7.</strong> Binary Search</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded "><a href="../java/index.html"><strong aria-hidden="true">1.</strong> Java</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../java/utility-classes.html"><strong aria-hidden="true">1.1.</strong> Utility Classes</a></li><li class="chapter-item expanded "><a href="../java/collections.html"><strong aria-hidden="true">1.2.</strong> Collections Library</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/index.html"><strong aria-hidden="true">2.</strong> Data Structures</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/index.html"><strong aria-hidden="true">2.1.</strong> Primitive Types</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/basic-types/bit-manipulation.html"><strong aria-hidden="true">2.1.1.</strong> Bit Manipulation</a></li></ol></li><li class="chapter-item expanded "><a href="../data-structures/bst/index.html"><strong aria-hidden="true">2.2.</strong> Binary Search Trees</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/index.html"><strong aria-hidden="true">2.3.</strong> Graphs</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../data-structures/graphs/traversal.html"><strong aria-hidden="true">2.3.1.</strong> Graph Traversal</a></li><li class="chapter-item expanded "><a href="../data-structures/graphs/topological-sort.html"><strong aria-hidden="true">2.3.2.</strong> Topological Sort</a></li></ol></li></ol></li><li class="chapter-item expanded "><a href="../patterns/index.html"><strong aria-hidden="true">3.</strong> Patterns</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../patterns/sliding-window.html"><strong aria-hidden="true">3.1.</strong> Sliding Window</a></li><li class="chapter-item expanded "><a href="../patterns/two-pointers.html"><strong aria-hidden="true">3.2.</strong> Two Pointers</a></li><li class="chapter-item expanded "><a href="../patterns/bfs.html"><strong aria-hidden="true">3.3.</strong> BFS</a></li><li class="chapter-item expanded "><a href="../patterns/dfs.html"><strong aria-hidden="true">3.4.</strong> DFS</a></li><li class="chapter-item expanded "><a href="../patterns/linked-list-reversal.html"><strong aria-hidden="true">3.5.</strong> Linked-List Reversal</a></li><li class="chapter-item expanded "><a href="../patterns/dynamic-programming.html"><strong aria-hidden="true">3.6.</strong> Dynamic Programming (Knapsack)</a></li><li class="chapter-item expanded "><a href="../patterns/binary-search.html" class="active"><strong aria-hidden="true">3.7.</strong> Binary Search</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -165,22 +165,28 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="data-structures"><a class="header" href="#data-structures">Data Structures</a></h1>
+                        <h1 id="binary-search"><a class="header" href="#binary-search">Binary Search</a></h1>
+<p>Binary search can typically be used to find a certain element in a sorted collection (i.e. Array, LinkedList or Matrix). The basic case applies when the exact target element is in the collection.</p>
+<p>Apply the following agorithm while <code>start &lt;= end</code>:</p>
+<ol>
+<li>Split the array in the middle use <code>middle = start + (end - start) / 2</code> to prevent integer overflow</li>
+<li>If the target element is smaller than the <code>middle</code> element, apply the algorithm to the left side of the array: <code>end = mid - 1</code></li>
+<li>If the target element is grater than the <code>middle</code> element, apply the algorithm to the right side of the array: <code>start = mid + 1</code></li>
+<li>If equal, return the element</li>
+</ol>
+<h2 id="variation-in-loop-invariant"><a class="header" href="#variation-in-loop-invariant">Variation in Loop Invariant</a></h2>
+<p>The loop invariant <code>start &lt;= end</code> introduces some interesting properties when the target element isn't in the collection. At the beginning of the last iteration, <code>start == middle == end</code>. So when the algorithm progresses, because of steps 2 or 3 above, the <code>start</code> will become the smallest element greater than the target (ceiling). The <code>end</code> element will become the largest element smaller than the target (floor).</p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
                         
-                            <a rel="prev" href="../java/collections.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../patterns/dynamic-programming.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
                         
 
-                        
-                            <a rel="next" href="../data-structures/basic-types/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                                <i class="fa fa-angle-right"></i>
-                            </a>
                         
 
                         <div style="clear: both"></div>
@@ -190,15 +196,11 @@
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
                 
-                    <a rel="prev" href="../java/collections.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../patterns/dynamic-programming.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
                 
 
-                
-                    <a rel="next" href="../data-structures/basic-types/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
-                        <i class="fa fa-angle-right"></i>
-                    </a>
                 
             </nav>
 
