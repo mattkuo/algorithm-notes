@@ -1,4 +1,5 @@
 # Sliding Window
+
 The sliding window pattern is the description given to a family of greedy algorithms that can be applied to optimally find the min/max property of a continguous slice of an array. The name comes from the fact that the algorithm keeps track of two indices into the input array, `tail` and `head`, that respectively form the start end end of a "window". The algorithm commonly makes use of a loop invariant to decide whether to shrink or expand the size of the window to arrive at a local optima.
 
 This set of algorithms allow a problem to be solved in one pass with a time complexity of O(n).

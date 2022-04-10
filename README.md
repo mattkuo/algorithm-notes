@@ -1,4 +1,4 @@
-# interview-notes
+# Algorithm Notes
 
 [Live Link](https://mattkuo.github.io/algorithm-notes/)
 
