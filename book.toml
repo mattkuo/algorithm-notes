@@ -3,7 +3,13 @@ authors = ["Matthew Kuo"]
 language = "en"
 multilingual = false
 src = "src"
-title = "Interview Notes"
+title = "Algorithm Notes"
 
 [preprocessor.graphviz]
 command = "mdbook-graphviz"
+
+[output.html]
+theme = "my-theme"
+default-theme = "light"
+# Force light theme so diagrams with transparent backgrounds are visible
+preferred-dark-theme = "light" 
