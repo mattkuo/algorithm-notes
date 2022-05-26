@@ -3,40 +3,27 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>Interview Notes</title>
-        
+        <title>Algorithm Notes</title>
         <meta name="robots" content="noindex" />
-        
-        
 
 
         <!-- Custom HTML head -->
         
-
-
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        
         <link rel="icon" href="favicon.svg">
-        
-        
         <link rel="shortcut icon" href="favicon.png">
-        
         <link rel="stylesheet" href="css/variables.css">
         <link rel="stylesheet" href="css/general.css">
         <link rel="stylesheet" href="css/chrome.css">
-        
         <link rel="stylesheet" href="css/print.css" media="print">
-        
 
         <!-- Fonts -->
         <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
-        
         <link rel="stylesheet" href="fonts/fonts.css">
-        
 
         <!-- Highlight.js Stylesheets -->
         <link rel="stylesheet" href="highlight.css">
@@ -44,15 +31,13 @@
         <link rel="stylesheet" href="ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
-        
 
-        
     </head>
     <body>
         <!-- Provide site root to javascript -->
         <script type="text/javascript">
             var path_to_root = "";
-            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "light" : "light";
         </script>
 
         <!-- Work around some values being stored in localStorage wrapped in quotes -->
@@ -105,8 +90,7 @@
         <div id="page-wrapper" class="page-wrapper">
 
             <div class="page">
-                
-                <div id="menu-bar-hover-placeholder"></div>
+                                <div id="menu-bar-hover-placeholder"></div>
                 <div id="menu-bar" class="menu-bar sticky bordered">
                     <div class="left-buttons">
                         <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
@@ -122,28 +106,21 @@
                             <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
                             <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
                         </ul>
-                        
                         <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
                             <i class="fa fa-search"></i>
                         </button>
-                        
                     </div>
 
-                    <h1 class="menu-title">Interview Notes</h1>
+                    <h1 class="menu-title">Algorithm Notes</h1>
 
                     <div class="right-buttons">
-                        
                         <a href="print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
-                        
-                        
-                        
 
                     </div>
                 </div>
 
-                
                 <div id="search-wrapper" class="hidden">
                     <form id="searchbar-outer" class="searchbar-outer">
                         <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
@@ -154,7 +131,6 @@
                         </ul>
                     </div>
                 </div>
-                
 
                 <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
                 <script type="text/javascript">
@@ -167,7 +143,7 @@
 
                 <div id="content" class="content">
                     <main>
-                        <div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="utility-classesfunctions"><a class="header" href="#utility-classesfunctions">Utility Classes/Functions</a></h1>
+                        <div style="break-before: page; page-break-before: always;"></div><h1 id="utility-classesfunctions"><a class="header" href="#utility-classesfunctions">Utility Classes/Functions</a></h1>
 <p>Common <code>Math</code> functions</p>
 <ul>
 <li>abs()</li>
@@ -178,7 +154,7 @@
 <li>pow()</li>
 <li>sqrt()</li>
 </ul>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="collections-library"><a class="header" href="#collections-library">Collections Library</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="collections-library"><a class="header" href="#collections-library">Collections Library</a></h1>
 <h2 id="comparator"><a class="header" href="#comparator">Comparator</a></h2>
 <p>Constructors for various data structures that apply sortation to the data allow you to pass in a comparator to compare elements as they are inserted. In addition the <code>Collections.sort()</code> method allows you to apply sortation to any data structure that implements the <code>List</code> interface. Being comfortable with the <code>Comparator</code> syntax is undoubtedly necessary.</p>
 <p>The <code>Comparator</code> has one abstract method <code>compare()</code>.</p>
@@ -201,8 +177,8 @@
 <pre><code class="language-java">Comparator myComparator = (a, b) -&gt; Integer.compare(a.getValue(), b.getValue());
 </code></pre>
 <p>Note: It's a good idea to use <code>Integer.compare()</code> here to prevent overflow.</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="data-structures"><a class="header" href="#data-structures">Data Structures</a></h1>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="primitive-types"><a class="header" href="#primitive-types">Primitive Types</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="data-structures"><a class="header" href="#data-structures">Data Structures</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="primitive-types"><a class="header" href="#primitive-types">Primitive Types</a></h1>
 <h2 id="sizes-of-types"><a class="header" href="#sizes-of-types">Sizes of Types</a></h2>
 <p>In Java, sizes of data types are machine independent. A word in the JVM is 32-bits.</p>
 <table><thead><tr><th>Data Type</th><th>Bytes</th><th>Bits</th></tr></thead><tbody>
@@ -215,7 +191,7 @@
 <tr><td>long</td><td>8</td><td>64</td></tr>
 <tr><td>double (decimal)</td><td>8</td><td>64</td></tr>
 </tbody></table>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="bit-manipulation"><a class="header" href="#bit-manipulation">Bit Manipulation</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="bit-manipulation"><a class="header" href="#bit-manipulation">Bit Manipulation</a></h1>
 <p>A common problem is computing the number of bits set to 1 in an integer. There are two solutions:</p>
 <ol>
 <li>Loop starting at the least significant digit of the integer and bitwise-AND the integer with 1. Increment count and shift right by one bit on each iteration. The runtime complexity is <em>O(n)</em> with <em>n</em> being the number of bits in the integer.</li>
@@ -261,11 +237,11 @@
 </ul>
 </li>
 </ul>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="binary-search-trees"><a class="header" href="#binary-search-trees">Binary Search Trees</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="binary-search-trees"><a class="header" href="#binary-search-trees">Binary Search Trees</a></h1>
 <h2 id="java-libraries"><a class="header" href="#java-libraries">Java Libraries</a></h2>
 <p>Java has TreeSet and TreeMap which are libraries that are based on the BST. These store the elements in ascending order.</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="graphs"><a class="header" href="#graphs">Graphs</a></h1>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="graph-traversal"><a class="header" href="#graph-traversal">Graph Traversal</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="graphs"><a class="header" href="#graphs">Graphs</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="graph-traversal"><a class="header" href="#graph-traversal">Graph Traversal</a></h1>
 <p>Graphs are typically traversed using depth first search or breadth first search. Both these family of algorithms have certain properties that make them more suitable for some problems over the other. In cases where traversal of a whole graph is required, either approach will find the correct solution.</p>
 <h2 id="depth-first-search"><a class="header" href="#depth-first-search">Depth First Search</a></h2>
 <p>Greedily traverses the depth of a graph/tree before exploring neighboring nodes. It's often implemented as a recursive algorithm. But, it can also be implemented iteratively using a stack.</p>
@@ -313,12 +289,16 @@
 }
 </code></pre>
 <p>Notice that the algorithm for BFS is almost identical to iterative DFS. The only difference between that it utilizes a queue (FIFO) versus a stack (LIFO).</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="topological-sort"><a class="header" href="#topological-sort">Topological Sort</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="topological-sort"><a class="header" href="#topological-sort">Topological Sort</a></h1>
 <p>Topological sort is commonly used for resolving dependency graphs or job scheduling. The algorithm only works if the graph is <strong>acyclic</strong>. However, it can be applied to find find out whether a graph is acyclic or cyclic.</p>
 <p>For example, given the graph below, the topological order for the graph is <code>ABCD</code> or <code>ACBD</code>.</p>
-<p><img src="data-structures/graphs/topological_sort_0.generated.svg" alt="" /></p>
+<div><!-- Generated by graphviz version 3.0.0 (20220226.1711)
+ --><!-- Pages: 1 --><svg width="188pt" height="98pt"
+ viewBox="0.00 0.00 188.00 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)"><polygon fill="white" stroke="transparent" points="-4,4 -4,-94 184,-94 184,4 -4,4"/><!-- A --><g id="node1" class="node"><title>A</title><ellipse fill="none" stroke="black" cx="18" cy="-45" rx="18" ry="18"/><text text-anchor="middle" x="18" y="-41.3" font-family="Times,serif" font-size="14.00">A</text></g><!-- B --><g id="node2" class="node"><title>B</title><ellipse fill="none" stroke="black" cx="90" cy="-72" rx="18" ry="18"/><text text-anchor="middle" x="90" y="-68.3" font-family="Times,serif" font-size="14.00">B</text></g><!-- A&#45;&gt;B --><g id="edge1" class="edge"><title>A&#45;&gt;B</title><path fill="none" stroke="black" d="M35.24,-51.26C43.63,-54.5 54.07,-58.53 63.5,-62.17"/><polygon fill="black" stroke="black" points="62.26,-65.44 72.85,-65.77 64.78,-58.91 62.26,-65.44"/></g><!-- C --><g id="node3" class="node"><title>C</title><ellipse fill="none" stroke="black" cx="90" cy="-18" rx="18" ry="18"/><text text-anchor="middle" x="90" y="-14.3" font-family="Times,serif" font-size="14.00">C</text></g><!-- A&#45;&gt;C --><g id="edge2" class="edge"><title>A&#45;&gt;C</title><path fill="none" stroke="black" d="M35.24,-38.74C43.63,-35.5 54.07,-31.47 63.5,-27.83"/><polygon fill="black" stroke="black" points="64.78,-31.09 72.85,-24.23 62.26,-24.56 64.78,-31.09"/></g><!-- D --><g id="node4" class="node"><title>D</title><ellipse fill="none" stroke="black" cx="162" cy="-45" rx="18" ry="18"/><text text-anchor="middle" x="162" y="-41.3" font-family="Times,serif" font-size="14.00">D</text></g><!-- B&#45;&gt;D --><g id="edge3" class="edge"><title>B&#45;&gt;D</title><path fill="none" stroke="black" d="M107.24,-65.74C115.63,-62.5 126.07,-58.47 135.5,-54.83"/><polygon fill="black" stroke="black" points="136.78,-58.09 144.85,-51.23 134.26,-51.56 136.78,-58.09"/></g><!-- C&#45;&gt;D --><g id="edge4" class="edge"><title>C&#45;&gt;D</title><path fill="none" stroke="black" d="M107.24,-24.26C115.63,-27.5 126.07,-31.53 135.5,-35.17"/><polygon fill="black" stroke="black" points="134.26,-38.44 144.85,-38.77 136.78,-31.91 134.26,-38.44"/></g></g></svg></div>
 <p>The graph below is non-resolvable by topological sort because D has a dependency on A. <a href="data-structures/graphs/topological-sort.html#breadth-first-search-approach-kahns-algorithm">Kahn's algorithm</a> would return an incomplete ordering of nodes (i.e. <code>AB</code>).</p>
-<p><img src="data-structures/graphs/topological_sort_1.generated.svg" alt="" /></p>
+<div><!-- Generated by graphviz version 3.0.0 (20220226.1711)
+ --><!-- Pages: 1 --><svg width="188pt" height="98pt"
+ viewBox="0.00 0.00 188.00 98.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 94)"><polygon fill="white" stroke="transparent" points="-4,4 -4,-94 184,-94 184,4 -4,4"/><!-- A --><g id="node1" class="node"><title>A</title><ellipse fill="none" stroke="black" cx="18" cy="-45" rx="18" ry="18"/><text text-anchor="middle" x="18" y="-41.3" font-family="Times,serif" font-size="14.00">A</text></g><!-- B --><g id="node2" class="node"><title>B</title><ellipse fill="none" stroke="black" cx="90" cy="-72" rx="18" ry="18"/><text text-anchor="middle" x="90" y="-68.3" font-family="Times,serif" font-size="14.00">B</text></g><!-- A&#45;&gt;B --><g id="edge1" class="edge"><title>A&#45;&gt;B</title><path fill="none" stroke="black" d="M35.24,-51.26C43.63,-54.5 54.07,-58.53 63.5,-62.17"/><polygon fill="black" stroke="black" points="62.26,-65.44 72.85,-65.77 64.78,-58.91 62.26,-65.44"/></g><!-- C --><g id="node3" class="node"><title>C</title><ellipse fill="none" stroke="black" cx="90" cy="-18" rx="18" ry="18"/><text text-anchor="middle" x="90" y="-14.3" font-family="Times,serif" font-size="14.00">C</text></g><!-- A&#45;&gt;C --><g id="edge2" class="edge"><title>A&#45;&gt;C</title><path fill="none" stroke="black" d="M35.24,-38.74C43.63,-35.5 54.07,-31.47 63.5,-27.83"/><polygon fill="black" stroke="black" points="64.78,-31.09 72.85,-24.23 62.26,-24.56 64.78,-31.09"/></g><!-- D --><g id="node4" class="node"><title>D</title><ellipse fill="none" stroke="black" cx="162" cy="-18" rx="18" ry="18"/><text text-anchor="middle" x="162" y="-14.3" font-family="Times,serif" font-size="14.00">D</text></g><!-- B&#45;&gt;D --><g id="edge3" class="edge"><title>B&#45;&gt;D</title><path fill="none" stroke="black" d="M104.83,-61.33C114.61,-53.79 127.92,-43.52 139.13,-34.87"/><polygon fill="black" stroke="black" points="141.42,-37.53 147.2,-28.65 137.14,-31.98 141.42,-37.53"/></g><!-- C&#45;&gt;D --><g id="edge4" class="edge"><title>C&#45;&gt;D</title><path fill="none" stroke="black" d="M107.24,-12.2C115.36,-11.29 125.41,-11.03 134.61,-11.43"/><polygon fill="black" stroke="black" points="134.62,-14.95 144.85,-12.21 135.14,-7.97 134.62,-14.95"/></g><!-- D&#45;&gt;C --><g id="edge5" class="edge"><title>D&#45;&gt;C</title><path fill="none" stroke="black" d="M144.85,-23.79C136.74,-24.71 126.7,-24.97 117.49,-24.57"/><polygon fill="black" stroke="black" points="117.47,-21.06 107.24,-23.8 116.95,-28.04 117.47,-21.06"/></g></g></svg></div>
 <h2 id="breadth-first-search-approach-kahns-algorithm"><a class="header" href="#breadth-first-search-approach-kahns-algorithm">Breadth First Search Approach (Kahn's Algorithm)</a></h2>
 <p>The intuition here is to start at the top of the dependency tree and removing each node. Once the <a href="https://xlinux.nist.gov/dads/HTML/indegree.html">in-degree</a> of a node reaches zero, remove it and add it to the sort order.</p>
 <ol>
@@ -347,14 +327,14 @@
 <li><a href="https://leetcode.com/problems/course-schedule">Course Scheduling</a></li>
 <li><a href="https://leetcode.com/problems/alien-dictionary">Alien Dictionary</a></li>
 </ul>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="patterns"><a class="header" href="#patterns">Patterns</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="patterns"><a class="header" href="#patterns">Patterns</a></h1>
 <p>This section groups algorithms according to their patterns. It's loosely based on the <a href="https://www.educative.io/courses/grokking-the-coding-interview">Grokking the Coding Interview</a> course on educative.io. </p>
 <h2 id="links--resources"><a class="header" href="#links--resources">Links &amp; Resources</a></h2>
 <ul>
 <li><a href="https://www.educative.io/courses/grokking-the-coding-interview">Grokking the Coding Interview</a></li>
 <li><a href="https://gist.github.com/tykurtz/3548a31f673588c05c89f9ca42067bc4">GCI to LC questions</a></li>
 </ul>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="sliding-window"><a class="header" href="#sliding-window">Sliding Window</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="sliding-window"><a class="header" href="#sliding-window">Sliding Window</a></h1>
 <p>The sliding window pattern is the description given to a family of greedy algorithms that can be applied to optimally find the min/max property of a continguous slice of an array. The name comes from the fact that the algorithm keeps track of two indices into the input array, <code>tail</code> and <code>head</code>, that respectively form the start end end of a &quot;window&quot;. The algorithm commonly makes use of a loop invariant to decide whether to shrink or expand the size of the window to arrive at a local optima.</p>
 <p>This set of algorithms allow a problem to be solved in one pass with a time complexity of O(n).</p>
 <h2 id="fixed-size-window"><a class="header" href="#fixed-size-window">Fixed-size Window</a></h2>
@@ -377,8 +357,8 @@
 <li><a href="https://leetcode.com/problems/maximum-subarray">Maximum subarray</a></li>
 <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters">Longest substring with no repeated characters</a></li>
 </ul>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="two-pointers"><a class="header" href="#two-pointers">Two Pointers</a></h1>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="breadth-first-search-1"><a class="header" href="#breadth-first-search-1">Breadth First Search</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="two-pointers"><a class="header" href="#two-pointers">Two Pointers</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="breadth-first-search-1"><a class="header" href="#breadth-first-search-1">Breadth First Search</a></h1>
 <p>BFS can be implemented by using a queue to traverse nodes in order of nodes that are closest to start point. This naturally finds the shortest path solution from the root node.</p>
 <p>See <a href="patterns/../data-structures/graphs/traversal.html">BFS section</a> of graphs traversal for more information.</p>
 <h2 id="level-order-traversal"><a class="header" href="#level-order-traversal">Level Order Traversal</a></h2>
@@ -400,7 +380,7 @@
     }
 }
 </code></pre>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="depth-first-search-1"><a class="header" href="#depth-first-search-1">Depth First Search</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="depth-first-search-1"><a class="header" href="#depth-first-search-1">Depth First Search</a></h1>
 <p>The recursive process for DFS usually results in less code and is more elegant. DFS can also be done utilizing a stack. See the <a href="patterns/../data-structures/graphs/traversal.html">DFS</a> section on the discussion on graphs for more information. Note that the recursive traversal method is analogous to the iterative one. In iterative traversal, the stack data structure emulates the call stack of the recursive solution.</p>
 <h2 id="keeping-track-of-the-current-path"><a class="header" href="#keeping-track-of-the-current-path">Keeping Track of the Current Path</a></h2>
 <p>A common pattern is to be asked to find the path from root to leaf. This can be done by keeping track of the current path in a list and removing it during backtracking.</p>
@@ -420,7 +400,7 @@
     path.remove(path.size() - 1);
 }
 </code></pre>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="linked-list-reversal"><a class="header" href="#linked-list-reversal">Linked List Reversal</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="linked-list-reversal"><a class="header" href="#linked-list-reversal">Linked List Reversal</a></h1>
 <p>The important thing to recognize here is that you'll need to store the pointer to the next item in the list prior to pointing the current pointer to the previous item.</p>
 <p>In total, you'll need to keep track of three pointers.</p>
 <ol>
@@ -444,8 +424,8 @@
 <p>When arriving at the sublist to reverse, store the last node of the first list (<code>previous</code>) and what will be the last node of the middle list after reversing(<code>current</code>). The diagram below shows why we need to store these as they will be needed when recombining the sublists.</p>
 <p><img src="patterns/../assets/linked-list2.svg" alt="Reversing sub-lists of a linked list" /></p>
 <p>After reversing, we can recombine the lists by setting <code>lastNode.next = previous</code> and <code>midLastNode.next = current</code>.</p>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="dynamic-programming"><a class="header" href="#dynamic-programming">Dynamic Programming</a></h1>
-<div id="chapter_begin" style="break-before: page; page-break-before: always;"></div><h1 id="binary-search"><a class="header" href="#binary-search">Binary Search</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="dynamic-programming"><a class="header" href="#dynamic-programming">Dynamic Programming</a></h1>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="binary-search"><a class="header" href="#binary-search">Binary Search</a></h1>
 <p>Binary search can typically be used to find a certain element in a sorted collection (i.e. Array, LinkedList or Matrix). The basic case applies when the exact target element is in the collection.</p>
 <p>Apply the following agorithm while <code>start &lt;= end</code>:</p>
 <ol>
@@ -461,9 +441,7 @@
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                        
 
-                        
 
                         <div style="clear: both"></div>
                     </nav>
@@ -471,49 +449,34 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                
 
-                
             </nav>
 
         </div>
 
-        
 
-        
 
-        
 
-        
         <script type="text/javascript">
             window.playground_copyable = true;
         </script>
-        
 
-        
 
-        
         <script src="elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="mark.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="searcher.js" type="text/javascript" charset="utf-8"></script>
-        
 
         <script src="clipboard.min.js" type="text/javascript" charset="utf-8"></script>
         <script src="highlight.js" type="text/javascript" charset="utf-8"></script>
         <script src="book.js" type="text/javascript" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
-        
 
-        
-        
         <script type="text/javascript">
         window.addEventListener('load', function() {
             window.setTimeout(window.print, 100);
         });
         </script>
-        
-        
 
     </body>
 </html>
