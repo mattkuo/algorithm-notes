@@ -148,11 +148,34 @@
 <ol>
 <li>Split the array in the middle use <code>middle = start + (end - start) / 2</code> to prevent integer overflow</li>
 <li>If the target element is smaller than the <code>middle</code> element, apply the algorithm to the left side of the array: <code>end = mid - 1</code></li>
-<li>If the target element is grater than the <code>middle</code> element, apply the algorithm to the right side of the array: <code>start = mid + 1</code></li>
+<li>If the target element is greater than the <code>middle</code> element, apply the algorithm to the right side of the array: <code>start = mid + 1</code></li>
 <li>If equal, return the element</li>
 </ol>
 <h2 id="variation-in-loop-invariant"><a class="header" href="#variation-in-loop-invariant">Variation in Loop Invariant</a></h2>
 <p>The loop invariant <code>start &lt;= end</code> introduces some interesting properties when the target element isn't in the collection. At the beginning of the last iteration, <code>start == middle == end</code>. So when the algorithm progresses, because of steps 2 or 3 above, the <code>start</code> will become the smallest element greater than the target (ceiling). The <code>end</code> element will become the largest element smaller than the target (floor).</p>
+<h2 id="finding-the-boundary"><a class="header" href="#finding-the-boundary">Finding the Boundary</a></h2>
+<p>Binary search is commonly used to find the &quot;boundary&quot; case in an array. (e.g first element satisfying some condition). The general algorithm can be adapted simply be using a <code>boundary</code> variable that gets updated to <code>mid</code> on each iteration that <code>mid</code> satisfies that condition.</p>
+<p>For example, given an array with only boolean false on the left side of the array and boolean true on the right, to find the first index with a true element, update the boundary each time that the elment at <code>mid</code> is true.</p>
+<pre><code class="language-java">public static int binarySearch(List&lt;Boolean&gt; bools) {
+    int left = 0;
+    int right = bools.size() - 1;
+    int boundary = -1;
+
+    while (left &lt;= right) {
+        int mid = (right - left) / 2 + left;
+        if (bools.get(mid)) {
+            boundary = mid;
+            // Scan on left because this one might not be the left most
+            right = mid - 1;
+        } else {
+            left = mid + 1;
+        }
+    }
+
+    return boundary;
+}
+
+</code></pre>
 
                     </main>
 
